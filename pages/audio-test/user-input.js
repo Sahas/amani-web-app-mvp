@@ -82,22 +82,37 @@ class UserInputPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            Enter URL :
-            <input
-              type="text"
-              name="textSourceUrl"
-              placeholder="url"
-              onChange={this.handleChange}
-              width="800"
-            />
-          </div>
-          <div>
-            <button type="submit">Convert to Speech!</button>
-          </div>
-        </form>
+      <div
+        style={{
+          marginTop: `200px`,
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div>
+          <h1>Convert your blog to audio platform!</h1>
+        </div>
+        <div>
+          <form onSubmit={this.handleSubmit}>
+            <div>
+              Enter URL :
+              <input
+                type="text"
+                name="textSourceUrl"
+                placeholder="url"
+                onChange={this.handleChange}
+                width="800"
+              />
+            </div>
+            <div
+              style={{
+                marginTop: `25px`,
+              }}
+            >
+              <button type="submit">Convert to Speech!</button>
+            </div>
+          </form>
+        </div>
         <div>{this.state.statusMessage}</div>
         <div>
           {this.state.status == "AUDIO_URL_RECEIVED" && (
